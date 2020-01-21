@@ -1,0 +1,12 @@
+<p class="h4 pb-4">Add Customer</p>
+<form [formGroup]="addForm" (ngSubmit)="addCustomer()">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" formControlName="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input type="number" formControlName="phoneNo" class="form-control" id="exampleInputPassword1" placeholder="Enter phone No." >
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>

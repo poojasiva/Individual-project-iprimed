@@ -1,0 +1,47 @@
+<div class="row p-4">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8 p-4">
+      <div class="row p-4">
+        <button type="button" class="btn btn-outline-primary" routerLink="/add">Add</button>
+      </div>
+      <table class="table">
+          <thead class="thead-light">
+          <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Name</th>
+          <th scope="col">Phone number</th>
+          <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor='let list of crudlist; let i = index'>
+          <td>{{i+1}}</td>
+          <td>{{list.name}}</td>
+          <td>{{list.phoneNo}}</td>
+          <td><span class="btn-group btn-group-toggle" data-toggle="buttons">
+                <button type="button" class="btn btn-outline-danger" (click)="updateCustomer(list)">Update</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer(list)">Delete</button>
+            </span>
+          </td>
+          </tr>
+          </tbody>
+
+          </table>
+          <div class="row" *ngIf="customerService.display">
+            <ul style="list-style-type:none;">
+            <li class="h6">Are you sure want to update this customer ? </li>
+            <li class="h6">Name : {{name}}</li>
+            <li class="h6">Phone Number : {{phoneNo}}</li>
+          </ul>
+          </div>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+<div class="row p-4">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-4 p-4">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="col-lg-6"></div>
+</div>
+

@@ -1,0 +1,14 @@
+<p class="h4 pb-4">Update Customer</p>
+<!--<p>Name : {{ name }}</p>
+<p>phone Number : {{ phoneNo }}</p><p></p>-->
+<form [formGroup]="updateForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" formControlName="fname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Phone Number</label>
+      <input type="number" formControlName="phoneNo" class="form-control" id="exampleInputPassword1" placeholder="Enter phone No." >
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="updateCustomer()">Update</button>
+</form>
